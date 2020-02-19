@@ -86,12 +86,19 @@ class QrScannerOverlayShape extends ShapeBorder {
       ..style = PaintingStyle.fill
       ..blendMode = BlendMode.dstOut;
 
+//     final cutOutRect = Rect.fromLTWH(
+//       width / 2 - _cutOutSize / 2 + borderOffset,
+//       height / 2 - _cutOutSize / 2 + borderOffset,
+//       _cutOutSize - borderOffset * 2,
+//       _cutOutSize - borderOffset * 2,
+//     );
+    
     final cutOutRect = Rect.fromLTWH(
-      width / 2 - _cutOutSize / 2 + borderOffset,
-      height / 2 - _cutOutSize / 2 + borderOffset,
+      rect.left + width / 2 - _cutOutSize / 2 + borderOffset,
+      rect.top + height / 2 - _cutOutSize / 2 + borderOffset,
       _cutOutSize - borderOffset * 2,
       _cutOutSize - borderOffset * 2,
-    );
+    );    
 
     canvas.saveLayer(
       rect,
